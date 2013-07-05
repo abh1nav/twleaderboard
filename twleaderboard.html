@@ -1,0 +1,29 @@
+<head>
+  <title>twleaderboard</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1 style="padding-left:10px;">Tweets that mention Meteor</h1>
+  {{#each tweets}}
+    {{> tweet}}
+  {{/each}}
+</template>
+
+<template name="tweet">
+    <div style="padding:10px;">
+        <div>
+            <img src="{{ user.profile_image_url_https }}">&nbsp;&nbsp;&nbsp;
+            <span style="font-size:26px;">{{ user.name }}&nbsp;&nbsp;</span>
+            <span><strong>@{{user.screen_name}}</strong></span>
+        </div>
+        <br>
+        <div>
+            <span>{{text}}</span>
+        </div>
+    </div>
+    <hr>
+</template>
